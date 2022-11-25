@@ -1,7 +1,8 @@
 package com.example.tmo.domain.recruitment.controller.dto.request;
 
-import com.example.tmo.domain.recruitment.domain.type.Category;
-import com.example.tmo.domain.recruitment.domain.type.MajorCategory;
+import com.example.tmo.domain.recruitment.domain.type.MajorType;
+import com.example.tmo.domain.recruitment.domain.type.RecruitmentType;
+import com.example.tmo.domain.user.domain.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -13,10 +14,10 @@ import javax.validation.constraints.Size;
 public class CreateRecruitmentRequest {
 
     @NotNull
-    private MajorCategory majorCategory;
+    private MajorType MajorType;
 
     @NotNull
-    private Category category;
+    private RecruitmentType RecruitmentType;
 
     @NotNull(message = "모집 분야를 작성해주세요.")
     private String technology;

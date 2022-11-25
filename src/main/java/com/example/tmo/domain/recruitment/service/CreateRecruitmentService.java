@@ -16,8 +16,6 @@ public class CreateRecruitmentService {
     private final RecruitmentRepository recruitmentRepository;
     private final UserFacade userFacade;
 
-    // TODO 토큰에서 유저 정보 빼오기
-
     @Transactional
     public void createRecruitment(CreateRecruitmentRequest request) {
 
@@ -25,9 +23,9 @@ public class CreateRecruitmentService {
 
         recruitmentRepository.save(Recruitment.builder()
                 .title(request.getTitle())
-                .category(request.getCategory())
+                .majorType(request.getMajorType())
                 .technology(request.getTechnology())
-                .majorCategory(request.getMajorCategory())
+                .recruitmentType(request.getRecruitmentType())
                 .content(request.getContent())
                 .user(user)
                 .build()
