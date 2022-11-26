@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
 
 @RequiredArgsConstructor
@@ -34,7 +35,7 @@ public class S3Facade {
             throw FileSaveFailedException.EXCEPTION;
         }
 
-        return getFileUrl(fileName);
+        return getImageUrl(fileName);
     }
 
     private ObjectMetadata getObjectMetadata(MultipartFile image) {
@@ -53,7 +54,7 @@ public class S3Facade {
         return fileName;
     }
 
-    public String getFileUrl(String fileName) {
+    public String getImageUrl(String fileName) {
         return amazonS3Client.getUrl(s3Properties.getBucket(), fileName).toString();
     }
 }
