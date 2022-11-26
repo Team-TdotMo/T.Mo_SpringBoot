@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
+
 @RequiredArgsConstructor
 @Service
 public class CreateRecruitmentService {
@@ -17,9 +19,10 @@ public class CreateRecruitmentService {
     private final UserFacade userFacade;
 
     @Transactional
-    public void createRecruitment(CreateRecruitmentRequest request) {
+    public Long createRecruitment(CreateRecruitmentRequest request) {
 
         User user = userFacade.getCurrentUser();
+        Long recruitment = 0L;
 
         recruitmentRepository.save(Recruitment.builder()
                 .title(request.getTitle())
@@ -27,8 +30,11 @@ public class CreateRecruitmentService {
                 .technology(request.getTechnology())
                 .recruitmentType(request.getRecruitmentType())
                 .content(request.getContent())
+                .period(request.getPeriod())
                 .user(user)
                 .build()
         );
+
+        return recruitment;
     }
 }

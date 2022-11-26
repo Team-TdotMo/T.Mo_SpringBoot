@@ -20,7 +20,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -30,11 +29,13 @@ import java.util.List;
 public class Recruitment extends BaseTimeEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "email", nullable = false)
+    @JoinColumn(nullable = false)
     private User user;
 
     @Column(length = 60)
     private String title;
+
+    private LocalDate period;
 
     @Column(length = 4000)
     private String content;
@@ -49,17 +50,19 @@ public class Recruitment extends BaseTimeEntity {
     @Enumerated(EnumType.STRING)
     private MajorType majorType;
 
-    @OneToMany(mappedBy = "recruitment", cascade = CascadeType.REMOVE)
+    @OneToMany(cascade = CascadeType.REMOVE)
     private List<RecruitmentImage> recruitmentImage;
 
     @Builder
-    public Recruitment(String title, String content, String technology, RecruitmentType recruitmentType,
-                       MajorType majorType, User user) {
+    public Recruitment(String title, LocalDate period, String content, String technology, RecruitmentType recruitmentType,
+                       MajorType majorType, User user, List<RecruitmentImage> recruitmentImage) {
         this.title = title;
+        this.period = period;
         this.content = content;
         this.technology = technology;
         this.recruitmentType = recruitmentType;
         this.majorType = majorType;
         this.user = user;
+        this.recruitmentImage = recruitmentImage;
     }
 }

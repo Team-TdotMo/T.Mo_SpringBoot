@@ -2,22 +2,20 @@ package com.example.tmo.domain.recruitment.controller.dto.request;
 
 import com.example.tmo.domain.recruitment.domain.type.MajorType;
 import com.example.tmo.domain.recruitment.domain.type.RecruitmentType;
-import com.example.tmo.domain.user.domain.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
 
 @Getter
 @NoArgsConstructor
 public class CreateRecruitmentRequest {
 
-    @NotNull
-    private MajorType MajorType;
+    private MajorType majorType;
 
-    @NotNull
-    private RecruitmentType RecruitmentType;
+    private RecruitmentType recruitmentType;
 
     @NotNull(message = "모집 분야를 작성해주세요.")
     private String technology;
@@ -29,4 +27,7 @@ public class CreateRecruitmentRequest {
     @NotNull(message = "제목을 입력해주세요.")
     @Size(min = 5, max = 60)
     private String title;
+
+    @NotNull(message = "모집기간을 입력해주세요.")
+    private LocalDate period;
 }

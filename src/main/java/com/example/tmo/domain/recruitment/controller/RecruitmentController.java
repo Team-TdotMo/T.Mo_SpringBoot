@@ -3,6 +3,7 @@ package com.example.tmo.domain.recruitment.controller;
 import com.example.tmo.domain.recruitment.controller.dto.request.CreateRecruitmentRequest;
 import com.example.tmo.domain.recruitment.controller.dto.response.RecruitmentDetailsResponse;
 import com.example.tmo.domain.recruitment.service.CreateRecruitmentService;
+import com.example.tmo.domain.recruitment.service.RecruitmentDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,15 +22,16 @@ import javax.validation.Valid;
 public class RecruitmentController {
 
     private final CreateRecruitmentService createRecruitmentService;
+    private final RecruitmentDetailsService recruitmentDetailsService;
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/writer")
-    public void createRecruitment(@RequestBody @Valid CreateRecruitmentRequest request) {
-        createRecruitmentService.createRecruitment(request);
+    public Long createRecruitment(@RequestBody @Valid CreateRecruitmentRequest request) {
+        return createRecruitmentService.createRecruitment(request);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public RecruitmentDetailsResponse recruitmentDetails(@PathVariable("id") Long recruitmentId) {
-
+        return recruitmentDetailsService.getRecruitmentDetails(recruitmentId);
     }
 }
