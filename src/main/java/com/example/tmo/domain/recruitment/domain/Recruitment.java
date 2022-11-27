@@ -50,12 +50,14 @@ public class Recruitment extends BaseTimeEntity {
     @Enumerated(EnumType.STRING)
     private MajorType majorType;
 
+    private Integer number;
+
     @OneToMany(cascade = CascadeType.REMOVE)
     private List<RecruitmentImage> recruitmentImage;
 
     @Builder
     public Recruitment(String title, LocalDate period, String content, String technology, RecruitmentType recruitmentType,
-                       MajorType majorType, User user, List<RecruitmentImage> recruitmentImage) {
+                       MajorType majorType, User user, Integer number, List<RecruitmentImage> recruitmentImage) {
         this.title = title;
         this.period = period;
         this.content = content;
@@ -63,6 +65,7 @@ public class Recruitment extends BaseTimeEntity {
         this.recruitmentType = recruitmentType;
         this.majorType = majorType;
         this.user = user;
+        this.number = number;
         this.recruitmentImage = recruitmentImage;
     }
 }
