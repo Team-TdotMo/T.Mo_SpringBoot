@@ -22,9 +22,8 @@ public class CreateRecruitmentService {
     public Long createRecruitment(CreateRecruitmentRequest request) {
 
         User user = userFacade.getCurrentUser();
-        Long recruitment = 0L;
 
-        recruitmentRepository.save(Recruitment.builder()
+        Recruitment recruitment = recruitmentRepository.save(Recruitment.builder()
                 .title(request.getTitle())
                 .majorType(request.getMajorType())
                 .technology(request.getTechnology())
@@ -32,9 +31,8 @@ public class CreateRecruitmentService {
                 .content(request.getContent())
                 .period(request.getPeriod())
                 .user(user)
-                .build()
-        );
+                .build());
 
-        return recruitment;
+        return recruitment.getId();
     }
 }
