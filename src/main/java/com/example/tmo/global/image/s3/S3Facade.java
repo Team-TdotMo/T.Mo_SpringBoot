@@ -55,10 +55,6 @@ public class S3Facade {
     }
 
     public String getImageUrl(String fileName) {
-<<<<<<< HEAD
         return s3Properties.getBucket() + fileName;
-=======
-        return amazonS3Client.getUrl(s3Properties.getBucket(), fileName).toString();
->>>>>>> post
     }
 }
