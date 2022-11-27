@@ -1,10 +1,12 @@
 package com.example.tmo.global.error;
 
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
-@AllArgsConstructor
+@Getter
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
 public class ErrorResponse {
 

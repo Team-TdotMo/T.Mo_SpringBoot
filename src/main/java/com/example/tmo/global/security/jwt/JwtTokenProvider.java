@@ -29,9 +29,10 @@ public class JwtTokenProvider {
     public String generateToken(String email) {
         return Jwts.builder()
                 .setIssuedAt(new Date())
+                .setHeaderParam("typ", "access")
                 .signWith(SignatureAlgorithm.HS256, jwtProperties.getSecret())
                 .setSubject(email)
-                .setExpiration(new Date(System.currentTimeMillis() + jwtProperties.getAccess() * 1000))
+                .setExpiration(new Date(System.currentTimeMillis() + jwtProperties.getAccessExp() * 1000))
                 .compact();
     }
 

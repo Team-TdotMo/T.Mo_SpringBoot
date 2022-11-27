@@ -7,7 +7,6 @@ import com.example.tmo.domain.user.domain.User;
 import com.example.tmo.domain.user.domain.repository.UserRepository;
 import com.example.tmo.domain.user.exception.UserNotFoundException;
 import com.example.tmo.domain.user.facade.UserFacade;
-import com.example.tmo.global.error.handler.TmoException;
 import com.example.tmo.global.security.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -34,7 +33,7 @@ public class UserService {
                 .name(request.getName())
                 .email(request.getEmail())
                 .grade(request.getGrade())
-                .majorCategory(request.getMajorCategory())
+                .MajorType(request.getMajorType())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .build();
 
@@ -43,8 +42,9 @@ public class UserService {
 
     @Transactional
     public TokenResponse login(UserLoginRequest request) {
+
         User user = userRepository.findByEmail(request.getEmail())
-                .orElseThrow(()-> UserNotFoundException.EXCEPTION);
+                        .orElseThrow(()->UserNotFoundException.EXCEPTION);
 
         userFacade.checkPassword(user, request.getPassword());
 

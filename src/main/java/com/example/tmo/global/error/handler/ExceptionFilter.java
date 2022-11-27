@@ -43,7 +43,7 @@ public class ExceptionFilter extends OncePerRequestFilter {
         String errorResponseJson = objectMapper.writeValueAsString(errorResponse);
 
         response.setStatus(errorCode.getStatus());
-        response.setContentType(MediaType.APPLICATION_JSON_VALUE);
+        response.setContentType(MediaType.APPLICATION_PROBLEM_JSON_UTF8_VALUE);
         response.getWriter().write(errorResponseJson);
     }
 }
