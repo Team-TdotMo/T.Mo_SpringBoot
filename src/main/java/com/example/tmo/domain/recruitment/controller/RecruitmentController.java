@@ -6,6 +6,7 @@ import com.example.tmo.domain.recruitment.service.CreateRecruitmentService;
 import com.example.tmo.domain.recruitment.service.RecruitmentDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,11 +28,16 @@ public class RecruitmentController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/writer")
     public Long createRecruitment(@RequestBody @Valid CreateRecruitmentRequest request) {
-        return createRecruitmentService.createRecruitment(request);
+        return createRecruitmentService.execute(request);
     }
 
     @GetMapping("/{id}")
     public RecruitmentDetailsResponse recruitmentDetails(@PathVariable("id") Long recruitmentId) {
-        return recruitmentDetailsService.getRecruitmentDetails(recruitmentId);
+        return recruitmentDetailsService.execute(recruitmentId);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteRecruitment(@PathVariable("id") Long recruitmentId) {
+        return
     }
 }

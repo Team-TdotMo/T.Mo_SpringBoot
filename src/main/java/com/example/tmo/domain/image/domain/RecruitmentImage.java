@@ -29,4 +29,5 @@ public class RecruitmentImage extends BaseIdEntity {
         this.recruitment = recruitment;
         this.imagePath = imagePath;
     }
+
 }

@@ -19,7 +19,7 @@ public class CreateRecruitmentService {
     private final UserFacade userFacade;
 
     @Transactional
-    public Long createRecruitment(CreateRecruitmentRequest request) {
+    public Long execute(CreateRecruitmentRequest request) {
 
         User user = userFacade.getCurrentUser();
 
