@@ -22,7 +22,7 @@ public class RecruitmentDetailsService {
     private final RecruitmentFacade recruitmentFacade;
     private final RecruitmentImageRepository recruitmentImageRepository;
 
-    public RecruitmentDetailsResponse getRecruitmentDetails(Long recruitmentId) {
+    public RecruitmentDetailsResponse execute(Long recruitmentId) {
 
         Recruitment recruitment = recruitmentFacade.findByRecruitmentId(recruitmentId);
         User user = userFacade.getCurrentUser();

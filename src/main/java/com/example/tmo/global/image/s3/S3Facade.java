@@ -1,7 +1,6 @@
 package com.example.tmo.global.image.s3;
 
 import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.example.tmo.global.exception.FileIsEmptyException;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.UUID;
 
 @RequiredArgsConstructor
@@ -35,7 +33,7 @@ public class S3Facade {
             throw FileSaveFailedException.EXCEPTION;
         }
 
-        return getImageUrl(fileName);
+        return fileName;
     }
 
     private ObjectMetadata getObjectMetadata(MultipartFile image) {
@@ -55,6 +53,7 @@ public class S3Facade {
     }
 
     public String getImageUrl(String fileName) {
-        return s3Properties.getBucket() + fileName;
+        return s3Properties.getBucket()+ "/" + fileName;
     }
+
 }

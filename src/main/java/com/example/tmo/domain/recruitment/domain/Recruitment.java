@@ -56,8 +56,14 @@ public class Recruitment extends BaseTimeEntity {
     private List<RecruitmentImage> recruitmentImage;
 
     @Builder
+<<<<<<< HEAD
     public Recruitment(String title, LocalDate period, String content, String technology, RecruitmentType recruitmentType,
                        MajorType majorType, User user, Integer number, List<RecruitmentImage> recruitmentImage) {
+=======
+    public Recruitment(String title, LocalDate period, String content, String technology,
+                       RecruitmentType recruitmentType, MajorType majorType, User user,
+                       List<RecruitmentImage> recruitmentImage) {
+>>>>>>> delete
         this.title = title;
         this.period = period;
         this.content = content;
@@ -67,5 +73,15 @@ public class Recruitment extends BaseTimeEntity {
         this.user = user;
         this.number = number;
         this.recruitmentImage = recruitmentImage;
+    }
+
+    public void updateRecruitment(String title, LocalDate period, String content, String technology,
+                                  RecruitmentType recruitmentType, MajorType majorType) {
+        this.title = title;
+        this.period = period;
+        this.content = content;
+        this.technology = technology;
+        this.recruitmentType = recruitmentType;
+        this.majorType = majorType;
     }
 }

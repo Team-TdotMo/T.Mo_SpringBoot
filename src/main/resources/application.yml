@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/t_mo?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    username: root
-    password: hkokim0309
+    url: jdbc:mysql://localhost:3306/${URL}?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: ${USERNAME}
+    password: ${PASSWORD}
 
   jpa:
     hibernate:
@@ -13,22 +13,23 @@ spring:
         show_sql: true
         format_sql: true
 
+
 cloud:
   aws:
     s3:
-      bucket: tmo_bucket
+      bucket: ${BUCKET}
     region:
-      static: ap-northeast-2
+      static: ${STATIC}
     stack:
       auto: false
     credentials:
-      access-key: AKIARDNJ65435CIIKE6G
-      secret-key: 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
+      access-key: ${ACCESS_KEY}
+      secret-key: ${SECRET_KEY}
 
 auth:
   jwt:
-    secret: 7YyA7JuQ66qo7KeR7ZSE66Gc7KCd7Yq46rCA7J6Y64Gd64Ks7Jy866m07KKL6rKg64uk
-    access_exp: 86400
+    secret: ${SECRET}
+    access_exp: ${ACCESS_EXP}
 
 
 
