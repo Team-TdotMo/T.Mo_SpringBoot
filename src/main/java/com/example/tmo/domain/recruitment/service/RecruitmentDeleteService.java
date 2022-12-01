@@ -12,14 +12,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 @RequiredArgsConstructor
 @Service
-public class DeleteRecruitmentService {
+public class RecruitmentDeleteService {
 
     private final RecruitmentRepository recruitmentRepository;
     private final RecruitmentFacade recruitmentFacade;
     private final UserFacade userFacade;
 
     @Transactional
-    public void deleteRecruitment(Long recruitmentId) {
+    public void execute(Long recruitmentId) {
 
         User user = userFacade.getCurrentUser();
         Recruitment recruitment = recruitmentFacade.findByRecruitmentId(recruitmentId);
