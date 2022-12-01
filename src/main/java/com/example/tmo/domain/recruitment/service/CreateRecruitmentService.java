@@ -30,6 +30,7 @@ public class CreateRecruitmentService {
                 .recruitmentType(request.getRecruitmentType())
                 .content(request.getContent())
                 .period(request.getPeriod())
+                .number(request.getNumber())
                 .user(user)
                 .build());
 
