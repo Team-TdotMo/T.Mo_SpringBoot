@@ -11,7 +11,7 @@ import java.time.LocalDate;
 
 @Getter
 @NoArgsConstructor
-public class CreateRecruitmentRequest {
+public class RecruitmentCreateRequest {
 
     private MajorType majorType;
 

@@ -1,6 +1,6 @@
 package com.example.tmo.domain.recruitment.service;
 
-import com.example.tmo.domain.recruitment.controller.dto.request.CreateRecruitmentRequest;
+import com.example.tmo.domain.recruitment.controller.dto.request.RecruitmentCreateRequest;
 import com.example.tmo.domain.recruitment.domain.Recruitment;
 import com.example.tmo.domain.recruitment.domain.repository.RecruitmentRepository;
 import com.example.tmo.domain.user.domain.User;
@@ -9,17 +9,15 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
-
 @RequiredArgsConstructor
 @Service
-public class CreateRecruitmentService {
+public class RecruitmentCreateService {
 
     private final RecruitmentRepository recruitmentRepository;
     private final UserFacade userFacade;
 
     @Transactional
-    public Long execute(CreateRecruitmentRequest request) {
+    public Long execute(RecruitmentCreateRequest request) {
 
         User user = userFacade.getCurrentUser();
 
