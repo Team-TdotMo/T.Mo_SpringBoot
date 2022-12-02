@@ -3,6 +3,7 @@ package com.example.tmo.domain.recruitment.controller;
 import com.example.tmo.domain.recruitment.controller.dto.request.RecruitmentCreateRequest;
 import com.example.tmo.domain.recruitment.controller.dto.request.RecruitmentUpdateRequest;
 import com.example.tmo.domain.recruitment.controller.dto.response.RecruitmentDetailsResponse;
+import com.example.tmo.domain.recruitment.controller.dto.response.RecruitmentIdResponse;
 import com.example.tmo.domain.recruitment.service.RecruitmentCreateService;
 import com.example.tmo.domain.recruitment.service.RecruitmentDeleteService;
 import com.example.tmo.domain.recruitment.service.RecruitmentDetailsService;

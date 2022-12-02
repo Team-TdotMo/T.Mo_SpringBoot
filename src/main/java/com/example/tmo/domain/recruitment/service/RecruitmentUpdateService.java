@@ -20,6 +20,6 @@ public class RecruitmentUpdateService {
         recruitmentFacade.checkUser(recruitment);
 
         recruitment.updateRecruitment(request.getTitle(),  request.getPeriod(), request.getContent(), request.getTechnology(),
-                request.getRecruitmentType(), request.getMajorType());
+               request.getRecruitmentType(), request.getMajorType());
     }
 }

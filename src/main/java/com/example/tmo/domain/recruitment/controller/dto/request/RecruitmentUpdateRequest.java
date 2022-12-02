@@ -30,4 +30,5 @@ public class RecruitmentUpdateRequest {
 
     @NotNull(message = "모집기간을 입력해주세요.")
     private LocalDate period;
+
 }
