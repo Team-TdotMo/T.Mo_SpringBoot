@@ -33,7 +33,7 @@ public class RecruitmentController {
     private final RecruitmentUpdateService recruitmentUpdateService;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/writer")
+    @PostMapping("/write")
     public Long createRecruitment(@RequestBody @Valid RecruitmentCreateRequest request) {
         return createRecruitmentService.execute(request);
     }
