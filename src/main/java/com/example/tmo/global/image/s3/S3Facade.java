@@ -56,4 +56,7 @@ public class S3Facade {
         return s3Properties.getBucket()+ "/" + fileName;
     }
 
+    /*public void deleteImage(String image) {
+        amazonS3Client.deleteObject(s3Properties.getBucket(), image);
+    }*/
 }
