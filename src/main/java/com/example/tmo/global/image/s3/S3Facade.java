@@ -1,9 +1,10 @@
 package com.example.tmo.global.image.s3;
 
+import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.example.tmo.global.exception.FileIsEmptyException;
 import com.example.tmo.global.exception.FileSaveFailedException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -52,4 +53,7 @@ public class S3Facade {
         return amazonS3Client.getUrl(s3Properties.getBucket(), fileName).toString();
     }
 
+    public void delete(String path) {
+        amazonS3Client.deleteObject(new DeleteObjectRequest(s3Properties.getBucket(), path));
+    }
 }
