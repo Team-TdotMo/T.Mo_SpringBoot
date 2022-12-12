@@ -46,40 +46,24 @@ public class Recruitment extends BaseTimeEntity {
     @Enumerated(EnumType.STRING)
     private RecruitmentType recruitmentType;
 
-    @NotNull
-    @Enumerated(EnumType.STRING)
-    private MajorType majorType;
-
-<<<<<<< Updated upstream
     private Integer number;
 
     @OneToMany(cascade = CascadeType.REMOVE)
     private List<RecruitmentImage> recruitmentImage;
 
     @Builder
-    public Recruitment(String title, LocalDate period, String content, String technology, RecruitmentType recruitmentType,
-                       MajorType majorType, User user, Integer number, List<RecruitmentImage> recruitmentImage) {
-=======
-    @OneToMany(mappedBy = "recruitment", cascade = CascadeType.REMOVE)
-    private List<RecruitmentImage> recruitmentImage;
-
-    @Builder
     public Recruitment(String title, LocalDate period, String content, String technology,
                        RecruitmentType recruitmentType, User user, Integer number,
                        List<RecruitmentImage> recruitmentImage) {
->>>>>>> Stashed changes
         this.title = title;
         this.period = period;
         this.content = content;
         this.technology = technology;
         this.recruitmentType = recruitmentType;
-        this.majorType = majorType;
         this.user = user;
         this.number = number;
         this.recruitmentImage = recruitmentImage;
     }
-<<<<<<< Updated upstream
-=======
 
     public void updateRecruitment(Integer number, String title, LocalDate period, String content, String technology,
                                   RecruitmentType recruitmentType) {
@@ -91,5 +75,4 @@ public class Recruitment extends BaseTimeEntity {
         this.technology = technology;
         this.recruitmentType = recruitmentType;
     }
->>>>>>> Stashed changes
 }
