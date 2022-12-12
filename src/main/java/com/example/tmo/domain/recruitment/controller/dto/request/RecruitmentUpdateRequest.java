@@ -13,11 +13,9 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class RecruitmentUpdateRequest {
 
-<<<<<<< HEAD
     private Integer number;
-=======
+
     private MajorType majorType;
->>>>>>> main
 
     private RecruitmentType recruitmentType;
 

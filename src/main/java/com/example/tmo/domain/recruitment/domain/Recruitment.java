@@ -49,12 +49,6 @@ public class Recruitment extends BaseTimeEntity {
     @Enumerated(EnumType.STRING)
     private RecruitmentType recruitmentType;
 
-<<<<<<< HEAD
-=======
-    private Integer number;
-
-    @OneToMany(mappedBy = "recruitment")
->>>>>>> main
     private Integer number;
 
     @OneToMany(cascade = CascadeType.REMOVE)

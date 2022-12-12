@@ -35,7 +35,6 @@ public class RecruitmentDetailsService {
                 .imagePaths(recruitmentImages.stream()
                         .map(recruitmentImage -> s3Facade.getImageUrl(recruitmentImage.getImagePath()))
                         .collect(Collectors.toList()))
-                .majorType(recruitment.getMajorType())
                 .period(recruitment.getPeriod())
                 .technology(recruitment.getTechnology())
                 .build();
