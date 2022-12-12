@@ -60,7 +60,6 @@ public class Recruitment extends BaseTimeEntity {
     @Builder
     public Recruitment(String title, LocalDate period, String content, String technology,
                        RecruitmentType recruitmentType, User user, Integer number,
-                       RecruitmentType recruitmentType, MajorType majorType, User user, Integer number,
                        List<RecruitmentImage> recruitmentImage) {
         this.title = title;
         this.period = period;
@@ -72,11 +71,10 @@ public class Recruitment extends BaseTimeEntity {
         this.recruitmentImage = recruitmentImage;
     }
 
-    public void updateRecruitment(String title, LocalDate period, String content, String technology,
+    public void updateRecruitment(Integer number, String title, LocalDate period, String content, String technology,
                                   RecruitmentType recruitmentType) {
-                                  RecruitmentType recruitmentType, MajorType majorType) {
 
-        //TODO number 추가
+        this.number = number;
         this.title = title;
         this.period = period;
         this.content = content;
