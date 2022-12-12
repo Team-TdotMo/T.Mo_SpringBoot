@@ -1,6 +1,5 @@
 package com.example.tmo.domain.image.controller;
 
-import com.example.tmo.domain.image.controller.dto.response.ImageUrlResponse;
 import com.example.tmo.domain.image.service.ImageUploadService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

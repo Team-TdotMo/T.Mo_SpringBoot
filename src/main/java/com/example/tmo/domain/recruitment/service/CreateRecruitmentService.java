@@ -25,7 +25,6 @@ public class CreateRecruitmentService {
 
         Recruitment recruitment = recruitmentRepository.save(Recruitment.builder()
                 .title(request.getTitle())
-                .majorType(request.getMajorType())
                 .technology(request.getTechnology())
                 .recruitmentType(request.getRecruitmentType())
                 .content(request.getContent())
@@ -33,6 +32,8 @@ public class CreateRecruitmentService {
                 .number(request.getNumber())
                 .user(user)
                 .build());
+
+
 
         return recruitment.getId();
     }
