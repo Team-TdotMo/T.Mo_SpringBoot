@@ -25,6 +25,8 @@ public class RecruitmentCreateRequest {
     @Size(min = 10, max = 4000)
     private String content;
 
+    private String tag;
+
     @NotNull(message = "제목을 입력해주세요.")
     @Size(min = 5, max = 60)
     private String title;
