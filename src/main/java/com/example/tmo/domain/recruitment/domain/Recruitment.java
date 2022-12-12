@@ -1,8 +1,8 @@
 package com.example.tmo.domain.recruitment.domain;
 
 import com.example.tmo.domain.image.domain.RecruitmentImage;
-import com.example.tmo.domain.recruitment.domain.type.MajorType;
 import com.example.tmo.domain.recruitment.domain.type.RecruitmentType;
+import com.example.tmo.domain.tag.domain.Tag;
 import com.example.tmo.domain.user.domain.User;
 import com.example.tmo.global.entity.BaseTimeEntity;
 import lombok.AccessLevel;
@@ -28,15 +28,18 @@ import java.util.List;
 @Entity
 public class Recruitment extends BaseTimeEntity {
 
+    @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(nullable = false)
+    @JoinColumn
     private User user;
 
+    @NotNull
     @Column(length = 60)
     private String title;
 
     private LocalDate period;
 
+    @NotNull
     @Column(length = 4000)
     private String content;
 
@@ -46,6 +49,12 @@ public class Recruitment extends BaseTimeEntity {
     @Enumerated(EnumType.STRING)
     private RecruitmentType recruitmentType;
 
+<<<<<<< HEAD
+=======
+    private Integer number;
+
+    @OneToMany(mappedBy = "recruitment")
+>>>>>>> main
     private Integer number;
 
     @OneToMany(cascade = CascadeType.REMOVE)

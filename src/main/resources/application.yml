@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/t_mo?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    username: root
-    password: hkokim0309
+    url: jdbc:mysql://localhost:3306/${URL}?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: ${USERNAME}
+    password: ${PASSWORD}
 
   jpa:
     hibernate:
@@ -16,16 +16,21 @@ spring:
 cloud:
   aws:
     s3:
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       bucket: tmo_bucket
 =======
       bucket: tmo-bucket
 >>>>>>> Stashed changes
+=======
+      bucket: ${BUCKET}
+>>>>>>> main
     region:
-      static: ap-northeast-2
+      static: ${STATIC}
     stack:
       auto: false
     credentials:
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       access-key: AKIARDNJ65435CIIKE6G
       secret-key: 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
@@ -43,6 +48,15 @@ auth:
     secret: 7JWE66y06rKD64+E7ZWY6riw7Iur64uk7KCV66eQ7KeE7Ius6rCc7Iur7Ja0
     access-exp: 86400
 >>>>>>> Stashed changes
+=======
+      access-key: ${ACCESS_KEY}
+      secret-key: ${SECRET_KEY}
+
+auth:
+  jwt:
+    secret: ${SECRET}
+    access-exp: ${ACCESS_EXP}
+>>>>>>> main
 
 
 

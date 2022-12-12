@@ -19,9 +19,8 @@ public class RecruitmentImage extends BaseIdEntity {
 
     @Column(nullable = false)
     private String imagePath;
-
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(name = "recruitment")
     private Recruitment recruitment;
 
     @Builder
@@ -29,4 +28,5 @@ public class RecruitmentImage extends BaseIdEntity {
         this.recruitment = recruitment;
         this.imagePath = imagePath;
     }
+
 }

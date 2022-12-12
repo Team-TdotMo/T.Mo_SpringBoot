@@ -27,8 +27,8 @@ cloud:
 
 auth:
   jwt:
-    secret: 7J2067KI7ZSE66Gc7KCd7Yq47JeQ7ISc7YWM7Iqk7Yq47L2U65Oc7J6Y7Kec66m07KKL6rKg64uk7ZWY7KeA66eM7Ja066C164uk
-    access_exp: 86400
+    secret: 7JWE66y06rKD64+E7ZWY6riw7Iur64uk7KCV66eQ7KeE7Ius6rCc7Iur7Ja0
+    access-exp: 86400
 
 
 
