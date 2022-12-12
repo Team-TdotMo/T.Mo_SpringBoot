@@ -24,13 +24,6 @@ cloud:
     credentials:
       access-key: ${ACCESS_KEY}
       secret-key: ${SECRET_KEY}
-      
-auth:
-  jwt:
-    secret: ${SECRET}
-    access-exp: ${ACCESS_EXP}
-      access-key: ${ACCESS_KEY}
-      secret-key: ${SECRET_KEY}
 
 auth:
   jwt:
