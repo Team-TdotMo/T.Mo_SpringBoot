@@ -13,19 +13,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-<<<<<<< HEAD
-=======
-import javax.swing.text.Element;
-import java.net.URLDecoder;
-
->>>>>>> main
 @RequiredArgsConstructor
 @Slf4j
 @Service
 public class RecruitmentDeleteService {
 
     private final RecruitmentRepository recruitmentRepository;
-    private final RecruitmentImageRepository recruitmentImageRepository;
     private final RecruitmentFacade recruitmentFacade;
     private final UserFacade userFacade;
     private final S3Facade s3Facade;

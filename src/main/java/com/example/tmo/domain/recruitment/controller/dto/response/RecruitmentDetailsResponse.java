@@ -21,4 +21,5 @@ public class RecruitmentDetailsResponse {
     private final LocalDate period;
     private final String content;
     private final List<String> imagePaths;
+    private final List<String> category;
 }

@@ -16,20 +16,63 @@ spring:
 cloud:
   aws:
     s3:
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+      bucket: tmo_bucket
+=======
       bucket: tmo-bucket
+>>>>>>> Stashed changes
+=======
+      bucket: ${BUCKET}
+>>>>>>> main
+=======
+      bucket: tmo-bucket
+>>>>>>> Stashed changes
     region:
-      static: ap-northeast-2
+      static: ${STATIC}
     stack:
       auto: false
     credentials:
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+<<<<<<< Updated upstream
       access-key: AKIARDNJ65435CIIKE6G
       secret-key: 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
 
 auth:
   jwt:
+    secret: 7YyA7JuQ66qo7KeR7ZSE66Gc7KCd7Yq46rCA7J6Y64Gd64Ks7Jy866m07KKL6rKg64uk
+    access_exp: 86400
+=======
+      access-key:
+      secret-key:
+
+auth:
+  jwt:
     secret: 7JWE66y06rKD64+E7ZWY6riw7Iur64uk7KCV66eQ7KeE7Ius6rCc7Iur7Ja0
     access-exp: 86400
+>>>>>>> Stashed changes
+=======
+      access-key: ${ACCESS_KEY}
+      secret-key: ${SECRET_KEY}
+
+auth:
+  jwt:
+    secret: ${SECRET}
+    access-exp: ${ACCESS_EXP}
+>>>>>>> main
 
 
+=======
+      access-key: AKIARDNJ6543WYC7N37V
+      secret-key: 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
+
+auth:
+  jwt:
+    secret: eW1s7YyM7J28Z2l0aWdub3Jl7YyM7J2866Gc66eJ7JWE64ao64qU642w7Jmc7Jis65286rCA7KOg7ZmU64KY6rKM
+    access-exp: 86400
+      
+>>>>>>> Stashed changes
 
 

@@ -21,7 +21,7 @@ public class TagCreateService {
         Recruitment recruitment = recruitmentFacade.findByRecruitmentId(recruitmentId);
 
         tagRepository.save(Tag.builder()
-                .type(request.getType())
+                .category(request.getType())
                 .recruitment(recruitment)
                 .build());
     }

@@ -13,12 +13,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class RecruitmentUpdateRequest {
 
-<<<<<<< HEAD
     private Integer number;
-=======
     private MajorType majorType;
->>>>>>> main
-
     private RecruitmentType recruitmentType;
 
     @NotNull(message = "모집 분야를 작성해주세요.")

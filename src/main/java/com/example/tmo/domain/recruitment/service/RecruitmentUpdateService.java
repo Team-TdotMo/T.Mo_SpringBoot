@@ -17,16 +17,9 @@ public class RecruitmentUpdateService {
     public void execute(Long recruitmentId, RecruitmentUpdateRequest request) {
 
         Recruitment recruitment = recruitmentFacade.findByRecruitmentId(recruitmentId);
-<<<<<<< HEAD
         recruitmentFacade.checkWriter(recruitment);
 
         recruitment.updateRecruitment(request.getNumber(), request.getTitle(),  request.getPeriod(), request.getContent(), request.getTechnology(),
-               request.getRecruitmentType());
-=======
-        recruitmentFacade.checkUser(recruitment);
-
-        recruitment.updateRecruitment(request.getTitle(),  request.getPeriod(), request.getContent(), request.getTechnology(),
-               request.getRecruitmentType(), request.getMajorType());
->>>>>>> main
+                request.getRecruitmentType());
     }
 }
