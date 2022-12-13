@@ -2,6 +2,7 @@ package com.example.tmo.domain.user.service;
 
 import com.example.tmo.domain.user.controller.dto.request.UserLoginRequest;
 import com.example.tmo.domain.user.controller.dto.request.UserSignupRequest;
+import com.example.tmo.domain.user.controller.dto.response.MemberInfoResponse;
 import com.example.tmo.domain.user.controller.dto.response.TokenResponse;
 import com.example.tmo.domain.user.domain.User;
 import com.example.tmo.domain.user.domain.repository.UserRepository;
@@ -50,6 +51,23 @@ public class UserService {
 
         return TokenResponse.builder()
                 .accessToken(jwtTokenProvider.generateToken(request.getEmail()))
+                .build();
+    }
+
+    @Transactional
+    public MemberInfoResponse memberInfo(Long id){
+        User user = userFacade.getMemberInfo(id);
+
+        return MemberInfoResponse.builder()
+                .name(user.getName())
+                .grade(user.getGrade())
+                .majorType(user.getMajorType())
+                .star(user.getStar())
+                .technology(user.getTechnology())
+                .introduce(user.getIntroduce())
+                .project(user.getProject())
+                .myProject(user.getMyProject())
+                .content(user.getContent())
                 .build();
     }
 }

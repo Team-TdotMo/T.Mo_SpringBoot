@@ -29,4 +29,9 @@ public class UserFacade {
             throw PasswordNotMatchException.EXCEPTION;
         }
     }
+
+    public User getMemberInfo(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(()-> UserNotFoundException.EXCEPTION);
+    }
 }
