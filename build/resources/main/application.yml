@@ -34,6 +34,7 @@ cloud:
     stack:
       auto: false
     credentials:
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
@@ -51,6 +52,14 @@ auth:
 auth:
   jwt:
     secret: 7JWE66y06rKD64+E7ZWY6riw7Iur64uk7KCV66eQ7KeE7Ius6rCc7Iur7Ja0
+=======
+      access-key: AKIARDNJ6543WYC7N37V
+      secret-key: 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
+      
+auth:
+  jwt:
+    secret: eW1s7YyM7J28Z2l0aWdub3Jl7YyM7J2866Gc66eJ7JWE64ao64qU642w7Jmc7Jis65286rCA7KOg7ZmU64KY6rKM
+>>>>>>> 28a8925efc5acd75c196971d13f277e093b6f508
     access-exp: 86400
 >>>>>>> Stashed changes
 =======
@@ -64,6 +73,7 @@ auth:
 >>>>>>> main
 
 
+<<<<<<< HEAD
 =======
       access-key: AKIARDNJ6543WYC7N37V
       secret-key: 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
@@ -76,3 +86,5 @@ auth:
 >>>>>>> Stashed changes
 
 
+=======
+>>>>>>> 28a8925efc5acd75c196971d13f277e093b6f508

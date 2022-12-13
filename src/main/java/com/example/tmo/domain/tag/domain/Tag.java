@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -20,7 +19,7 @@ public class Tag extends BaseIdEntity {
     private String category;
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "recruitment_id")
     private Recruitment recruitment;
 
     @Builder

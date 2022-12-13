@@ -7,5 +7,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TagCreateRequest {
 
-    private String type;
+    private String category;
 }
