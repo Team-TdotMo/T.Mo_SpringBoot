@@ -19,7 +19,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class RecruitmentDeleteService {
 
     private final RecruitmentRepository recruitmentRepository;
-    private final RecruitmentImageRepository recruitmentImageRepository;
     private final RecruitmentFacade recruitmentFacade;
     private final UserFacade userFacade;
     private final S3Facade s3Facade;

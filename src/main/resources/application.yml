@@ -28,7 +28,4 @@ cloud:
 auth:
   jwt:
     secret: ${SECRET}
-    access-exp: ${ACCESS_EXP}
-      
-
-
+    access_exp: ${ACCESS_EXP}

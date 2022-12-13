@@ -39,7 +39,7 @@ public class RecruitmentController {
     }
 
     @GetMapping("/{id}")
-    public RecruitmentDetailsResponse recruitmentDetails(@PathVariable("id") Long recruitmentId) {
+    public RecruitmentDetailsResponse DetailsRecruitment(@PathVariable("id") Long recruitmentId) {
         return recruitmentDetailsService.execute(recruitmentId);
     }
 

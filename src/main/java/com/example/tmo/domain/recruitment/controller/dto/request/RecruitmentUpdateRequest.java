@@ -14,9 +14,13 @@ import java.time.LocalDate;
 public class RecruitmentUpdateRequest {
 
     private Integer number;
+<<<<<<< HEAD
+    private MajorType majorType;
+=======
 
     private MajorType majorType;
 
+>>>>>>> 28a8925efc5acd75c196971d13f277e093b6f508
     private RecruitmentType recruitmentType;
 
     @NotNull(message = "모집 분야를 작성해주세요.")

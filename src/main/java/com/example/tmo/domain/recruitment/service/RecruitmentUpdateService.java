@@ -20,10 +20,14 @@ public class RecruitmentUpdateService {
         recruitmentFacade.checkWriter(recruitment);
 
         recruitment.updateRecruitment(request.getNumber(), request.getTitle(),  request.getPeriod(), request.getContent(), request.getTechnology(),
+<<<<<<< HEAD
+                request.getRecruitmentType());
+=======
                request.getRecruitmentType());
         recruitmentFacade.checkWriter(recruitment);
 
         recruitment.updateRecruitment(request.getNumber(), request.getTitle(),  request.getPeriod(), request.getContent(), request.getTechnology(),
                request.getRecruitmentType());
+>>>>>>> 28a8925efc5acd75c196971d13f277e093b6f508
     }
 }

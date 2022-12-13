@@ -51,7 +51,11 @@ public class Recruitment extends BaseTimeEntity {
 
     private Integer number;
 
+<<<<<<< HEAD
+    @OneToMany(cascade = CascadeType.REMOVE)
+=======
     @OneToMany(mappedBy = "recruitment", cascade = CascadeType.REMOVE)
+>>>>>>> 28a8925efc5acd75c196971d13f277e093b6f508
     private List<RecruitmentImage> recruitmentImage;
 
     @OneToMany(mappedBy = "recruitment", cascade = CascadeType.REMOVE)
