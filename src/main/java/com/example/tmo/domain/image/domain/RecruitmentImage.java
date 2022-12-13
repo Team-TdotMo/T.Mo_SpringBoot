@@ -20,7 +20,7 @@ public class RecruitmentImage extends BaseIdEntity {
     @Column(nullable = false)
     private String imagePath;
     @ManyToOne
-    @JoinColumn(name = "recruitment")
+    @JoinColumn(name = "recruitment_id")
     private Recruitment recruitment;
 
     @Builder

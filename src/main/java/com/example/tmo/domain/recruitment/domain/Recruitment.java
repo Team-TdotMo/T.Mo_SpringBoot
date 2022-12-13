@@ -51,13 +51,16 @@ public class Recruitment extends BaseTimeEntity {
 
     private Integer number;
 
-    @OneToMany(cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "recruitment", cascade = CascadeType.REMOVE)
     private List<RecruitmentImage> recruitmentImage;
+
+    @OneToMany(mappedBy = "recruitment", cascade = CascadeType.REMOVE)
+    private List<Tag> category;
 
     @Builder
     public Recruitment(String title, LocalDate period, String content, String technology,
                        RecruitmentType recruitmentType, User user, Integer number,
-                       List<RecruitmentImage> recruitmentImage) {
+                       List<RecruitmentImage> recruitmentImage, List<Tag> category) {
         this.title = title;
         this.period = period;
         this.content = content;
@@ -66,6 +69,7 @@ public class Recruitment extends BaseTimeEntity {
         this.user = user;
         this.number = number;
         this.recruitmentImage = recruitmentImage;
+        this.category = category;
     }
 
     public void updateRecruitment(Integer number, String title, LocalDate period, String content, String technology,

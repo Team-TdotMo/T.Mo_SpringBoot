@@ -18,7 +18,7 @@ cloud:
     s3:
       bucket: ${BUCKET}
     region:
-      static: ${STATIC}
+      static: ap-northeast-2
     stack:
       auto: false
     credentials:
@@ -29,6 +29,6 @@ auth:
   jwt:
     secret: ${SECRET}
     access-exp: ${ACCESS_EXP}
-
+      
 
 
