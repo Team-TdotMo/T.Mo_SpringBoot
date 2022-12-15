@@ -25,22 +25,40 @@ public class User extends BaseIdEntity {
     @Column(nullable = false, length = 30)
     private String email;
 
-    @NotNull
-    private int grade;
+    @Column(nullable = false, columnDefinition = "tinyint")
+    private Integer grade;
 
-    @NotNull
     @Enumerated(EnumType.STRING)
     private MajorType MajorType;
 
-    @NotNull
+    @Column(nullable = false)
     private String password;
 
+    private Integer star;
+
+    private String content;
+
+    private String introduce;
+
+    private String technology;
+
+    private String project;
+
+    private String myProject;
+
     @Builder
-    public User(String name, String email, int grade, MajorType MajorType, String password) {
+    public User(String name, String email, Integer grade, MajorType MajorType, String password, Integer star, String introduce
+            , String technology, String project, String myProject, String content) {
         this.name = name;
         this.email = email;
         this.grade = grade;
         this.MajorType = MajorType;
         this.password = password;
+        this.technology = technology;
+        this.star = star;
+        this.content = content;
+        this.introduce = introduce;
+        this.project = project;
+        this.myProject = myProject;
     }
 }
