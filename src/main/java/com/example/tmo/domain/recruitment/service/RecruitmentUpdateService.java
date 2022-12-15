@@ -19,7 +19,12 @@ public class RecruitmentUpdateService {
         Recruitment recruitment = recruitmentFacade.findByRecruitmentId(recruitmentId);
         recruitmentFacade.checkUser(recruitment);
 
+<<<<<<< Updated upstream
         recruitment.updateRecruitment(request.getTitle(),  request.getPeriod(), request.getContent(), request.getTechnology(),
                request.getRecruitmentType(), request.getMajorType());
+=======
+        recruitment.updateRecruitment(request.getNumber(), request.getTitle(),  request.getPeriod(),
+                request.getContent(), request.getRecruitmentType());
+>>>>>>> Stashed changes
     }
 }

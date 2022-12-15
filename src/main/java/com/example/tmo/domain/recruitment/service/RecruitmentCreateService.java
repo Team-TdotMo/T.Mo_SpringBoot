@@ -23,8 +23,11 @@ public class RecruitmentCreateService {
 
         Recruitment recruitment = recruitmentRepository.save(Recruitment.builder()
                 .title(request.getTitle())
+<<<<<<< Updated upstream
                 .majorType(request.getMajorType())
                 .technology(request.getTechnology())
+=======
+>>>>>>> Stashed changes
                 .recruitmentType(request.getRecruitmentType())
                 .content(request.getContent())
                 .period(request.getPeriod())

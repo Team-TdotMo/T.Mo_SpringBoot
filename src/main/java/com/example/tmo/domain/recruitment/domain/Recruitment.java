@@ -1,8 +1,7 @@
 package com.example.tmo.domain.recruitment.domain;
 
-import com.example.tmo.domain.image.domain.RecruitmentImage;
+import com.example.tmo.domain.image.domain.Image;
 import com.example.tmo.domain.recruitment.domain.type.RecruitmentType;
-import com.example.tmo.domain.tag.domain.Tag;
 import com.example.tmo.domain.user.domain.User;
 import com.example.tmo.global.entity.BaseTimeEntity;
 import lombok.AccessLevel;
@@ -20,7 +19,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
+import java.sql.Date;
 import java.util.List;
 
 @Getter
@@ -37,42 +36,54 @@ public class Recruitment extends BaseTimeEntity {
     @Column(length = 60)
     private String title;
 
-    private LocalDate period;
+    @NotNull
+    private Date period;
 
     @NotNull
     @Column(length = 4000)
     private String content;
 
-    private String technology;
-
     @NotNull
     @Enumerated(EnumType.STRING)
     private RecruitmentType recruitmentType;
 
+    @NotNull
     private Integer number;
 
+<<<<<<< Updated upstream
     @OneToMany(mappedBy = "recruitment")
     private Integer number;
 
     @OneToMany(cascade = CascadeType.REMOVE)
     private List<RecruitmentImage> recruitmentImage;
+=======
+    @OneToMany(mappedBy = "recruitment", cascade = CascadeType.REMOVE)
+    private List<Image> recruitmentImage;
+>>>>>>> Stashed changes
 
     @Builder
-    public Recruitment(String title, LocalDate period, String content, String technology,
+    public Recruitment(String title, Date period, String content,
                        RecruitmentType recruitmentType, User user, Integer number,
+<<<<<<< Updated upstream
                        RecruitmentType recruitmentType, MajorType majorType, User user, Integer number,
                        List<RecruitmentImage> recruitmentImage) {
+=======
+                       List<Image> recruitmentImage) {
+>>>>>>> Stashed changes
         this.title = title;
         this.period = period;
         this.content = content;
-        this.technology = technology;
         this.recruitmentType = recruitmentType;
         this.user = user;
         this.number = number;
         this.recruitmentImage = recruitmentImage;
     }
 
+<<<<<<< Updated upstream
     public void updateRecruitment(String title, LocalDate period, String content, String technology,
+=======
+    public void updateRecruitment(Integer number, String title, Date period, String content,
+>>>>>>> Stashed changes
                                   RecruitmentType recruitmentType) {
                                   RecruitmentType recruitmentType, MajorType majorType) {
 
@@ -80,7 +91,6 @@ public class Recruitment extends BaseTimeEntity {
         this.title = title;
         this.period = period;
         this.content = content;
-        this.technology = technology;
         this.recruitmentType = recruitmentType;
     }
 }

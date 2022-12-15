@@ -1,6 +1,6 @@
 package com.example.tmo.domain.recruitment.service;
 
-import com.example.tmo.domain.image.domain.RecruitmentImage;
+import com.example.tmo.domain.image.domain.Image;
 import com.example.tmo.domain.image.domain.repository.RecruitmentImageRepository;
 import com.example.tmo.domain.recruitment.controller.dto.response.RecruitmentDetailsResponse;
 import com.example.tmo.domain.recruitment.domain.Recruitment;
@@ -10,6 +10,7 @@ import com.example.tmo.domain.user.facade.UserFacade;
 import com.example.tmo.global.image.s3.S3Facade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,12 +23,13 @@ public class RecruitmentDetailsService {
     private final RecruitmentFacade recruitmentFacade;
     private final RecruitmentImageRepository recruitmentImageRepository;
 
+    @Transactional
     public RecruitmentDetailsResponse execute(Long recruitmentId) {
 
         Recruitment recruitment = recruitmentFacade.findByRecruitmentId(recruitmentId);
         User user = userFacade.getCurrentUser();
 
-        List<RecruitmentImage> recruitmentImages = recruitmentImageRepository.findAllByRecruitment(recruitment);
+        List<Image> recruitmentImages = recruitmentImageRepository.findAllByRecruitment(recruitment);
 
         return RecruitmentDetailsResponse.builder()
                 .content(recruitment.getContent())
@@ -37,7 +39,6 @@ public class RecruitmentDetailsService {
                         .collect(Collectors.toList()))
                 .majorType(recruitment.getMajorType())
                 .period(recruitment.getPeriod())
-                .technology(recruitment.getTechnology())
                 .build();
     }
 }

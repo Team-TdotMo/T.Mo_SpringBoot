@@ -1,19 +1,23 @@
 package com.example.tmo.domain.recruitment.controller.dto.request;
 
-import com.example.tmo.domain.recruitment.domain.type.MajorType;
 import com.example.tmo.domain.recruitment.domain.type.RecruitmentType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.sql.Date;
 import java.time.LocalDate;
 
 @Getter
 @NoArgsConstructor
 public class RecruitmentUpdateRequest {
 
+<<<<<<< Updated upstream
     private MajorType majorType;
+=======
+    private Integer number;
+>>>>>>> Stashed changes
 
     private RecruitmentType recruitmentType;
 
@@ -29,6 +33,6 @@ public class RecruitmentUpdateRequest {
     private String title;
 
     @NotNull(message = "모집기간을 입력해주세요.")
-    private LocalDate period;
+    private Date period;
 
 }

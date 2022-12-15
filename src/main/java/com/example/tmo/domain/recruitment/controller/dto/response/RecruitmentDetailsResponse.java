@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class RecruitmentDetailsResponse {
     private final MajorType majorType;
     private final RecruitmentType recruitmentType;
     private final String technology;
-    private final LocalDate period;
+    private final Date period;
     private final String content;
     private final List<String> imagePaths;
 }
