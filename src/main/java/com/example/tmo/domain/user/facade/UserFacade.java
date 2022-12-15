@@ -29,4 +29,9 @@ public class UserFacade {
             throw PasswordNotMatchException.EXCEPTION;
         }
     }
+
+    public Long getUserId()  {
+        return getCurrentUser().getId();
+    }
+
 }

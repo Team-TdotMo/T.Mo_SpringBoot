@@ -1,6 +1,6 @@
 package com.example.tmo.domain.image.service;
 
-import com.example.tmo.domain.image.domain.RecruitmentImage;
+import com.example.tmo.domain.image.domain.Image;
 import com.example.tmo.domain.image.domain.repository.RecruitmentImageRepository;
 import com.example.tmo.domain.recruitment.domain.Recruitment;
 import com.example.tmo.domain.recruitment.facade.RecruitmentFacade;
@@ -25,7 +25,7 @@ public class ImageUploadService {
 
         for (MultipartFile file : images) {
             recruitmentImageRepository.save(
-                    new RecruitmentImage(recruitment, s3Facade.uploadImage(file)));
+                    new Image(recruitment, s3Facade.uploadImage(file)));
         }
     }
 }

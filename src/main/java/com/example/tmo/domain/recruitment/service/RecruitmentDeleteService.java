@@ -1,7 +1,6 @@
 package com.example.tmo.domain.recruitment.service;
 
-import com.example.tmo.domain.image.domain.RecruitmentImage;
-import com.example.tmo.domain.image.domain.repository.RecruitmentImageRepository;
+import com.example.tmo.domain.image.domain.Image;
 import com.example.tmo.domain.recruitment.domain.Recruitment;
 import com.example.tmo.domain.recruitment.domain.repository.RecruitmentRepository;
 import com.example.tmo.domain.recruitment.facade.RecruitmentFacade;
@@ -30,7 +29,7 @@ public class RecruitmentDeleteService {
         Recruitment recruitment = recruitmentFacade.findByRecruitmentId(recruitmentId);
         recruitmentFacade.checkWriter(recruitment);
 
-        for(RecruitmentImage recruitmentImage : recruitment.getRecruitmentImage()) {
+        for(Image recruitmentImage : recruitment.getRecruitmentImage()) {
             s3Facade.delete(recruitmentImage.getImagePath());
         }
 

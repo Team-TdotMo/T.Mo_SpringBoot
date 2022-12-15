@@ -23,7 +23,6 @@ public class RecruitmentCreateService {
 
         Recruitment recruitment = recruitmentRepository.save(Recruitment.builder()
                 .title(request.getTitle())
-                .technology(request.getTechnology())
                 .recruitmentType(request.getRecruitmentType())
                 .content(request.getContent())
                 .period(request.getPeriod())

@@ -24,10 +24,6 @@ public class TagDeleteService {
         Recruitment recruitment = recruitmentFacade.findByRecruitmentId(recruitmentId);
         recruitmentFacade.checkWriter(recruitment);
 
-<<<<<<< HEAD
-        tagRepository.deleteByRecruitmentId(recruitment);
-=======
-        tagRepository.deleteByRecruitmentId(recruitmentId);
->>>>>>> 28a8925efc5acd75c196971d13f277e093b6f508
+        tagRepository.deleteAllByRecruitmentId(recruitment.getId());
     }
 }

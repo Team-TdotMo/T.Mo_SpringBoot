@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 public enum ErrorCode {
     FILE_IS_EMPTY(400, "파일이 비어있습니다."),
     FILE_SAVE_FAILED(400, "파일 저장을 실패했습니다."),
+    APPLICATION_NOT_CREATE(400, "모집글에 신청할 수 없습니다."),
 
     EXPIRED_JWT(401, "토큰이 만료되었습니다."),
     INVALID_JWT(401, "토큰이 유효하지 않습니다."),
